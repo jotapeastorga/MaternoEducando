@@ -23,7 +23,11 @@
     <!--script src="https://kit.fontawesome.com/889e1ba2d3.js" crossorigin="anonymous"></script-->
     <meta charset="utf-8">
     <link rel="icon" href="../css/Master.css">
+<<<<<<< HEAD
     <title>Home</title>
+=======
+    <title>Inicio</title>
+>>>>>>> Initial commit
 
 </head>
 <body style="background-color:#75716F;">
