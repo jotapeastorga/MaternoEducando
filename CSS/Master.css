@@ -1,0 +1,181 @@
+*{
+
+  font-family: "montserrat light";
+}
+
+a
+{ color: #000000; }
+
+#contenedor{
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  margin: auto;
+  /*display: flex;/*para poner en el centro*/
+  align-items: center;
+  justify-content: center;
+  /*background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCeIRKrqU2p5kytNPvs6MuXfXPgeHSmlPacg&usqp=CAU");*/
+}
+#cabezera{
+  width: auto;
+  height: auto;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#Logo{
+  width: 450px;
+  height: 100px;
+  background-image: url(../imagenes/Logo.png);
+  background-position: center;
+  background-size: 95%;
+  background-repeat: no-repeat;
+  float: left;
+}
+#contacto{
+  width:300px;
+  height:100px;
+  text-align: center;
+  float: left;
+  /*display: flex;
+  align-items: center;
+  justify-content: center;*/
+}
+#conEmail{
+  width: 100%;
+  height: 49px;
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#email{
+  width: 95%;
+  height: 49px;
+  margin:auto;
+}
+.btnEmail{
+  width: 100%;
+  height: 35px;
+  border-radius: 10px;
+  background: none;
+  border:1px solid green;
+  font-family: "montserrat";
+  transition-duration: 0.4s;
+  display: flex; /*paso 1 para centrar*/
+  align-items: center; /*paso 2 para centrar*/
+  justify-content: center;/*paso 3 para centrar*/
+}
+.btnEmail:hover{
+    background-color:pink;
+    color: white;
+  }
+#redes{
+  width: 100%;
+  height: 50px;
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.redes{
+  width: 80px;
+  height:25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+#instagram{
+  background-image:url();
+  background-size:contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#y2{
+  background-image:url();
+  background-size:contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#wS{
+  background-image:url();
+  background-size:contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#login{
+  width:150px;
+  height:100px;
+  margin-top: 1%;
+  text-align: center;
+  float: left;
+}
+#conMenu{
+  width: 100%;
+  height: 50px;
+  margin: auto;
+  text-align: center;
+}
+#menu{
+  width: 400px;
+  height: 50px;
+  margin: auto;
+  font-size: 10px;
+}
+#inicio,#qS,#tera,#rO,#blog{
+  width: 100px;
+  height: 50px;
+  float:left;
+  display: flex; /*paso 1 para centrar*/
+  align-items: center; /*paso 2 para centrar*/
+  justify-content: center;/*paso 3 para centrar*/
+
+}
+.btnSesion{
+  width: 100%;
+  height: 35px;
+  border-radius: 10px;
+  background: #54D1A4;
+  border:1px solid green;
+  font-size: 18px;/*font-family: "montserrat";*/
+  transition-duration: 0.4s;
+  display: flex; /*paso 1 para centrar*/
+  align-items: center; /*paso 2 para centrar*/
+  justify-content: center;/*paso 3 para centrar*/
+}
+.btnSesion:hover{
+    background-color:#BC9F95;
+    color: white;
+}
+  .tamañoColor{
+    font-size: 30px;
+    color: pink;
+  }
+  .btnMenu{
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    background: none;
+    border:2px solid #54D1A4;
+    font-size: 18px;/*font-family: "montserrat";*/
+    transition-duration: 0.4s;
+    display: flex; /*paso 1 para centrar*/
+    align-items: center; /*paso 2 para centrar*/
+    justify-content: center;/*paso 3 para centrar*/
+
+  }
+  .btnMenu:hover{
+      background-color:#54D1A4;
+      color: white;
+
+    }
+    .textCenter{
+      text-align: center;
+      margin: auto;
+      /*display: flex;/*para poner en el centro*/
+      align-items: center;
+      justify-content: center;
+      /*background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCeIRKrqU2p5kytNPvs6MuXfXPgeHSmlPacg&usqp=CAU");*/
+    }

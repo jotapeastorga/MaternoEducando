@@ -1,0 +1,72 @@
+
+#cont_formulario{
+  height: auto;
+  width: 100%;
+  margin-top: 10px;
+  align-items: center;
+  float: left;
+}
+#registroSesion{
+  height: auto;
+  width: 80%;
+  margin: auto;
+  padding:30px;
+  border-radius: 6px;
+  border: 1px solid black;
+  box-shadow: 7px 13px 37px #000;
+}
+.textarea{
+  width: 100%;
+  height: 400px;
+  padding:0px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  border: 1px solid black;
+  font-size: 18px;
+  text-emphasis-position: above;
+}
+.archivo{
+  width: 250px;
+  height: 100px;
+  padding:10px;
+  margin-bottom: 0px;
+  border-radius: 5px;
+  border: 1px solid black;
+  font-size: 18px;
+  text-emphasis-position: above;
+}
+.btnResSesion{
+  width: 200px;
+  height:50px;
+  border-radius: 10px;
+  background: #FFFFFF;
+  margin-top: 5px;
+  border:1px solid green;
+  font-size: 20px;/*font-family: "montserrat";*/
+  transition-duration: 0.4s;
+}
+.btnResSesion:hover{
+  background-color: #7FEAC6; /* Green */
+  color: white;
+}
+.btnMenuCli{
+  width: 100%;
+  height:50px;
+  border-radius: 10px;
+  background: #54D1A4;
+  border:1px solid red;
+  font-size: 20px;/*font-family: "montserrat";*/
+  transition-duration: 0.4s;
+  margin-top: 20px;
+}
+.btnMenuCli:hover{
+  background-color: pink;
+  color: white;
+}
+
+#archivo{
+  background-image: url(../imagenes/archivo.png);
+  background-position: center;
+  background-size: 10%;
+  background-repeat: no-repeat;
+}

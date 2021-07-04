@@ -1,0 +1,30 @@
+
+#contQs{
+  width: 100%;
+  height: auto;
+  float: left;
+}
+#qsTitulo{
+  width: 100%;
+  height: 80px;
+}
+#qsImagen{
+  width: 80%;
+  height: 500px;
+  margin-top: 300px;
+  margin: auto;
+  background-image: url(../imagenes/quienesSomos/qS.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#titulo_insta{
+  float: left;
+  width: 100%;
+  margin-top: 50px;
+}
+#instafeed-container{
+  float: left;
+  height: 200px;
+  width: 100%;
+  margin-top: 10px;
+}

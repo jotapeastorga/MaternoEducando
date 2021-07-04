@@ -1,0 +1,31 @@
+
+#mje_ini{
+  height: auto;
+  width: 100%;
+  float: left;
+  color: white;
+  font-family: montserrat;
+  margin-bottom: 60px;
+}
+#cont_abajo{
+height: auto;
+width: 100%;
+/*background-image: url(../imagenes/index/felices.jpg);*/
+
+float:left;
+}
+#videos{
+  height: 520px;
+  width: 100%;
+  float: left;
+}
+#vid1{
+  height: 320px;
+  width: 49%;
+  float: left;
+}
+#vid2{
+  height: 320px;
+  width: 49%;
+  float: left;
+}

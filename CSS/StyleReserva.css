@@ -1,0 +1,141 @@
+
+#contTera{
+  width: 100%;
+  height: auto%;
+  float: left;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+#tipoTerapia{
+  width: 100%;
+  height: 80px;
+  float: left;
+  text-align: center;
+}
+.terapeuta{
+  width: 100%;
+  height: 300px;
+  margin: auto;
+  float: left;
+  border: 1px dashed black;
+  border-radius: 10px;
+  display: flex; /*paso 1 para centrar*/
+  align-items: center; /*paso 2 para centrar*/
+  justify-content: center;/*paso 3 para centrar*/
+}
+.fotoPerfilEli{
+width: 200px;
+height:200px;
+margin-left: 20px;
+margin-right: 20px;
+margin-top: 50px;
+float: left;
+  background-image: url(../imagenes/fotoEli.jpeg);
+  background-size: cover;
+  border: 2px solid pink;
+
+}
+
+.fotoPerfilDani{
+  width: 200px;
+  height:200px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 50px;
+  float: left;
+  background-image: url(../imagenes/fotoDani.jpeg);
+  background-size: cover;
+  border: 2px solid pink;
+}
+.especialidad{
+  width: 600px;
+  height:300px;
+  margin-left: 20px;
+  margin-right: 20px;
+  float: left;
+  display: flex; /*paso 1 para centrar*/
+  align-items: center; /*paso 2 para centrar*/
+  justify-content: center;/*paso 3 para centrar*/
+}
+.valorHora{
+width: 200px;
+height:42px;
+margin-left: 20px;
+margin-right: 20px;
+margin-top: 50px;
+float: left;
+}
+.tiempoSe{
+  width: 200px;
+  height:20px;
+  float: left;
+  display: flex; /*paso 1 para centrar*/
+  align-items: center; /*paso 2 para centrar*/
+  justify-content: center;/*paso 3 para centrar*/
+}
+.valorSe{
+  width: 200px;
+  height:20px;
+  float: left;
+  display: flex; /*paso 1 para centrar*/
+  align-items: center; /*paso 2 para centrar*/
+  justify-content: center;/*paso 3 para centrar*/
+}
+.divBotones{
+  width: 200px;
+  height:200px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 50px;
+  float: left;
+  align-items: center; /*paso 2 para centrar*/
+  justify-content: center;/*paso 3 para centrar*/
+  /*border:2px solid #54D1A4;*/
+}
+.diaReserva{
+  width: 145px;
+  height:48px;
+  border-radius: 10px;
+  background: #FFFFFF;
+  border:1px solid green;
+  font-size: 15px;/*font-family: "montserrat";*/
+  text-align: center;
+  float: left;
+}
+.horaReserva{
+  width: 195px;
+  height:48px;
+  border-radius: 10px;
+  background: #FFFFFF;
+  border:1px solid green;
+  font-size: 15px;/*font-family: "montserrat";*/
+  text-align: center;
+  float: left;
+}
+.btns{
+  width: 200px;
+  height:50px;
+  border-radius: 10px;
+  background: #FFFFFF;
+  border:1px solid green;
+  font-size: 20px;/*font-family: "montserrat";*/
+  transition-duration: 0.4s;
+}
+.btns:hover{
+  background-color: #7FEAC6; /* Green */
+  color: white;
+}
+.btnFecha{
+  width: 50px;
+  height:50px;
+  border-radius: 10px;
+  background: #54D1A4;
+  border:1px solid green;
+  font-size: 20px;/*font-family: "montserrat";*/
+  transition-duration: 0.4s;
+}
+.btnFecha:hover{
+  background-color: pink; /* Green */
+  color: white;
+}
