@@ -92,7 +92,7 @@ $nombreActivo = $_SESSION['nombreActivo'];
 
 
     <div id=titulo_insta>
-      <h1 style="text-align: center">Nuestros  pacientes nos avalan</h1>
+      <h1 style="text-align: center">Nuestros pacientes nos avalan</h1>
     </div>
         <div id="instafeed-container">
 
