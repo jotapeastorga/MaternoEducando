@@ -23,11 +23,8 @@
     <!--script src="https://kit.fontawesome.com/889e1ba2d3.js" crossorigin="anonymous"></script-->
     <meta charset="utf-8">
     <link rel="icon" href="../css/Master.css">
-<<<<<<< HEAD
-    <title>Home</title>
-=======
     <title>Inicio</title>
->>>>>>> Initial commit
+
 
 </head>
 <body style="background-color:#75716F;">
@@ -41,50 +38,73 @@
             </div>
             <div id="redes">
                 <div id="instagram" class="redes">
-                    <a style="text-decoration:none" href="https://www.instagram.com/materno.educando" class="tamañoColor">
+                    <a style="text-decoration:none" href="https://www.instagram.com/materno.educando"
+                       class="tamañoColor">
                         <i class="fab fa-instagram"></i>
                     </a>
                 </div>
                 <div id="y2" class="redes">
-                    <a style="text-decoration:none" href="https://www.youtube.com/channel/UCSuqzLJgmO0tesZhGUzLVUg" class="tamañoColor">
+                    <a style="text-decoration:none" href="https://www.youtube.com/channel/UCSuqzLJgmO0tesZhGUzLVUg"
+                       class="tamañoColor">
                         <i class="fab fa-youtube"></i>
                     </a>
                 </div>
                 <div id="wS" class="redes">
-                    <a style="text-decoration:none" href="https://www.instagram.com/materno.educando" class="tamañoColor">
+                    <a style="text-decoration:none" href="https://www.instagram.com/materno.educando"
+                       class="tamañoColor">
                         <i class="fab fa-whatsapp"></i>
                     </a>
                 </div>
             </div>
         </div>
 
-        <?php if($rutSesionPaciente == null) {
+        <?php if ($rutSesionPaciente == null) {
 
-        ?>
-        <div id="login"><!--botones inicio de sesion-->
-            <div class="btnSesion"><a style="text-decoration:none"  href=<?php echo $iniciarSesion ?>>Iniciar Sesion</a></div>
-            <div class="btnSesion"><a style="text-decoration:none"  href=<?php echo $registrar ?>>Registrarse<a/></div>
-        </div>
-        <?php }else{?>
+            ?>
             <div id="login"><!--botones inicio de sesion-->
-                <div class="btnSesion">Bienvenido,  <?php echo $nombreActivo ?></div>
-                <div class="btnSesion"><a style="text-decoration:none"  href="../Clases/cerrarSesion.php">Cerrar Sesión<a/></div>
+                <div class="btnSesion"><a style="text-decoration:none" href=<?php echo $iniciarSesion ?>>Iniciar
+                        Sesion</a></div>
+                <div class="btnSesion"><a style="text-decoration:none" href=<?php echo $registrar ?>>Registrarse<a/>
+                </div>
             </div>
-        <?php
-
-        }?>
+        <?php } else { ?>
+            <div id="login"><!--botones inicio de sesion-->
+                <div class="btnSesion">Bienvenido, <?php echo $nombreActivo ?></div>
+                <div class="btnSesion"><a style="text-decoration:none" href="../Clases/cerrarSesion.php">Cerrar
+                        Sesión<a/></div>
+            </div>
+            <?php
+        } ?>
     </div>
     <div id="conMenu">
         <div id="menu">
-            <!--<div class="btnSesion">Iniciar sesion</div>-->
-            <div id="inicio">
-                <button type="button" name="btnInicio" class="btnMenu"
-                </button><a style="text-decoration:none" href="../html/home.php">Inicio </a></div>
+            <?php if ($rutSesionPaciente == null) {
+                ?>
+                <div id="inicio">
+                    <button type="button" name="btnInicio" class="btnMenu"
+                    </button><a style="text-decoration:none" href="../html/index.php">Inicio </a></div>
+
+            <?php } else {
+                if ($rutSesionPaciente == 184896559 or $rutSesionPaciente == 176557865) {
+                    ?>
+                    <div id="inicio">
+                        <button type="button" name="btnInicio" class="btnMenu"
+                        </button><a style="text-decoration:none" href="../html/sesionPro.php">Profesional </a></div>
+                <?php } else {
+                    ?>
+                    <div id="inicio">
+                        <button type="button" name="btnInicio" class="btnMenu"
+                        </button><a style="text-decoration:none" href="../html/sesionCli.php">Paciente </a></div>
+                    <?php
+                }
+            } ?>
+
             <div id="qS">
                 <button type="button" name="btnQs" class="btnMenu"
                 </button><a style="text-decoration:none" href=<?php echo $Qsomos ?>>Quienes somos</a></div>
             <div id="rO">
-                <button type="button" name="btnReservar" class="btnMenu"><a style="text-decoration:none" href=<?php echo $reservar ?>>Reservar
+                <button type="button" name="btnReservar" class="btnMenu"><a style="text-decoration:none"
+                                                                            href=<?php echo $reservar ?>>Reservar
                         Hora</a></button>
             </div>
             <div id="blog">

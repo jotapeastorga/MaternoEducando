@@ -63,7 +63,26 @@ $validarPaciente = $_SESSION['validarPaciente'];
       <div id="conMenu">
           <div id="menu">
               <!--<div class="btnSesion">Iniciar sesion</div>-->
-              <div id="inicio"><button type="button" name="btnInicio"   class="btnMenu"</button><a style="text-decoration:none" href=<?php echo  $home?>>Inicio       </a></div>
+                          <?php if ($rutSesionPaciente == null) {
+                ?>
+                <div id="inicio">
+                    <button type="button" name="btnInicio" class="btnMenu"
+                    </button><a style="text-decoration:none" href="../html/index.php">Inicio </a></div>
+
+            <?php } else {
+                if ($rutSesionPaciente == 184896559 or $rutSesionPaciente == 176557865) {
+                    ?>
+                    <div id="inicio">
+                        <button type="button" name="btnInicio" class="btnMenu"
+                        </button><a style="text-decoration:none" href="../html/sesionPro.php">Profesional </a></div>
+                <?php } else {
+                    ?>
+                    <div id="inicio">
+                        <button type="button" name="btnInicio" class="btnMenu"
+                        </button><a style="text-decoration:none" href="../html/sesionCli.php">Paciente </a></div>
+                    <?php
+                }
+            } ?>
 <<<<<<< HEAD
               <div id="qS">    <button type="button" name="btnQs"       class="btnMenu"</button><a style="text-decoration:none" href=<?php echo $Qsomos ?>>Quienes Somos</a></div>
 =======
