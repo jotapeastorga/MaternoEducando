@@ -64,7 +64,7 @@ $nombreActivo = $_SESSION['nombreActivo'];
           <?php }else{?>
               <div id="login"><!--botones inicio de sesion-->
                   <div class="btnSesion">Bienvenido,  <?php echo $nombreActivo ?></div>
-                  <div class="btnSesion"><a style="text-decoration:none"  href="../PhpBackEnd/cerrarSesion.php">Cerrar Sesión<a/></div>
+                  <div class="btnSesion"><a style="text-decoration:none"  href="../Clases/cerrarSesion.php">Cerrar Sesión<a/></div>
               </div>
               <?php
 

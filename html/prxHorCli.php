@@ -187,7 +187,7 @@ $nombreActivo = $_SESSION['nombreActivo'];
     </div>
 
     <div id="GoBack">
-        <button type="button" name="btnMenuCli" class="btnMenuCli" ><a style="text-decoration:none" href="../html/sesionCli.php">Ir a mi menu</a></button>
+        <button type="button" name="btnMenuCli" class="btnMenuCli" ><a style="text-decoration:none" href="../html/sesionCli.php">Volver a mis Sesiones</a></button>
     </div>
 
 
