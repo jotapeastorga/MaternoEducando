@@ -11,7 +11,12 @@ $registrar= $_SESSION['registrar'];
 $reservar = $_SESSION['reservar'];
 $rutSesionPaciente = $_SESSION['usuarioActivo'];
 $nombreActivo = $_SESSION['nombreActivo'];
-
+$mesCita =$_POST['mesCitaElegida'];
+$diaCita =$_POST['diaCitaElegida'];
+$rutCita =$_POST['rutCitaElegida'];
+$bloqueCita =$_POST['bloqueCitaElegida'];
+$nombreCita =$_POST['nombreCitaElegida'];
+$estadoCita =$_POST['estadoCitaElegida'];
 
 ?>
 
@@ -103,34 +108,45 @@ $nombreActivo = $_SESSION['nombreActivo'];
     </div>
 
     <div id="cont_formulario" class="textCenter"> <!--Formulario de registro-->
-            <div id="registroSesion">
-
-                  <h3>Registro de sesion</h3>
-                  <form class="" action="index.html" method="post" enctype="multipart/form-data">
-                    <div id="textarea">
-                      <p><textarea name="registro" class="textarea" placeholder="Escribe aqui el registro de la sesion..."></textarea></p>
-                    </div>
-                    <div id="archivo">
-                      <input type="file" name="Documento" value=""class="archivo">
-                    </div>
-                      <button class="btnResSesion" type="submit">Registrar</button>
+              <div id="registroSesion">
+                    <h3>Registro de sesion</h3>
+                  <form id="formRegistrarSesion">
+                      <div id="textarea">
+                        <p><textarea name="registroSesionTexto" class="textarea" placeholder="Escribe aqui el registro de la sesion..."></textarea></p>
+                      </div>
+                      <h2>Resumen Paciente</h2>
+                      <div id="textarea">
+                          <p><textarea name="resumenSesionTexto" class="textarea" placeholder="Resúmen o indicaciones para el paciente"></textarea></p>
+                      </div>
+                      <input type="hidden"  name="mesCita" value=<?php echo $mesCita ?>>
+                      <input type="hidden"  name="diaCita" value=<?php echo $diaCita ?>>
+                      <input type="hidden"  name="rutCita" value=<?php echo $rutCita ?>>
+                      <input type="hidden"  name="bloqueCita" value=<?php echo  $bloqueCita?>>
+                      <input type="hidden"  name="estadoCita" value=<?php echo  $estadoCita?>>
+                      <input type="hidden"  name="nombreCita" value=<?php echo  $nombreCita?>>
+                      <!--div id="archivo">
+                        <input type="file" name="Documento" value=""class="archivo">
+                      </div-->
+                        <button class="btnResSesion" type="submit">Registrar</button>
+                  </form>
+                  <form id="formAnularSesion">
+                      <input type="hidden"  name="mesCita" value=<?php echo $mesCita ?>>
+                      <input type="hidden"  name="diaCita" value=<?php echo $diaCita ?>>
+                      <input type="hidden"  name="rutCita" value=<?php echo $rutCita ?>>
+                      <input type="hidden"  name="bloqueCita" value=<?php echo  $bloqueCita?>>
+                      <input type="hidden"  name="estadoCita" value=<?php echo  $estadoCita?>>
+                      <input type="hidden"  name="nombreCita" value=<?php echo  $nombreCita?>>
+                      <button type="submit" name="btnAnularSesion" class="btnResSesion">Anular sesion</button>
                   </form>
 
+              </div>
 
-                <div class="mt-3" id="respuesta">
-
-                </div>
-
-            </div>
-
+        </div>
+        <div id="GoBack">
+            <button type="button" name="btnMenuCli" class="btnMenuCli" ><a style="text-decoration:none" href="../html/sesionPro.php">Ir a mi menu</a></button>
+        </div>
       </div>
-      <div id="GoBack">
-          <button type="button" name="btnMenuCli" class="btnMenuCli" ><a style="text-decoration:none" href="../html/sesionPro.php">Ir a mi menu</a></button>
-      </div>
-    </div>
-
-
-
-    <script src="../js/crearPaciente.js"></script>
-  </body>
-</html>
+      <script src="../js/anulaSesion.js"></script>
+      <script src="../js/registraSesion.js"></script>
+    </body>
+  </html>

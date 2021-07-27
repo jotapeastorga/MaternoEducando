@@ -1,4 +1,7 @@
 <?php
+include("../PhpBackEnd/conexion.php");
+
+
 session_start();
 ob_start();
 
@@ -10,6 +13,8 @@ $registrar= $_SESSION['registrar'];
 $reservar = $_SESSION['reservar'];
 $rutSesionPaciente = $_SESSION['usuarioActivo'];
 $nombreActivo = $_SESSION['nombreActivo'];
+
+
 
 
 ?>
@@ -64,7 +69,7 @@ $nombreActivo = $_SESSION['nombreActivo'];
           <?php }else{?>
               <div id="login"><!--botones inicio de sesion-->
                   <div class="btnSesion">Bienvenido,  <?php echo $nombreActivo ?></div>
-                  <div class="btnSesion"><a style="text-decoration:none"  href="../Clases/cerrarSesion.php">Cerrar Sesión<a/></div>
+                  <div class="btnSesion"><a style="text-decoration:none"  href="../PhpBackEnd/cerrarSesion.php">Cerrar Sesión<a/></div>
               </div>
               <?php
 
@@ -73,26 +78,7 @@ $nombreActivo = $_SESSION['nombreActivo'];
       <div id="conMenu">
           <div id="menu">
               <!--<div class="btnSesion">Iniciar sesion</div>-->
-                          <?php if ($rutSesionPaciente == null) {
-                ?>
-                <div id="inicio">
-                    <button type="button" name="btnInicio" class="btnMenu"
-                    </button><a style="text-decoration:none" href="../html/index.php">Inicio </a></div>
-
-            <?php } else {
-                if ($rutSesionPaciente == 184896559 or $rutSesionPaciente == 176557865) {
-                    ?>
-                    <div id="inicio">
-                        <button type="button" name="btnInicio" class="btnMenu"
-                        </button><a style="text-decoration:none" href="../html/sesionPro.php">Profesional </a></div>
-                <?php } else {
-                    ?>
-                    <div id="inicio">
-                        <button type="button" name="btnInicio" class="btnMenu"
-                        </button><a style="text-decoration:none" href="../html/sesionCli.php">Paciente </a></div>
-                    <?php
-                }
-            } ?>
+              <div id="inicio"><button type="button" name="btnInicio"   class="btnMenu"</button><a style="text-decoration:none" href=<?php echo  $home?>>Inicio       </a></div>
               <div id="qS">    <button type="button" name="btnQs"       class="btnMenu"</button><a style="text-decoration:none" href=<?php echo $Qsomos ?>>Quienes somos</a></div>
               <div id="rO"><button type="button" name="btnReservar" class="btnMenu"><a style="text-decoration:none" href=<?php echo  $reservar?>>Reservar Hora</a></button></div>
               <div id="blog"><button type="button" name="btnBlog" class="btnMenu"><!--Aqui va el href-->Blog</button></div>
@@ -103,18 +89,98 @@ $nombreActivo = $_SESSION['nombreActivo'];
       <div id="HorasCliente"><h1>Tus proximas citas</h1></div>
       <div class="hora"> <!--Hora-->
           <div class="fotoPerfil" ></div>
-          <div class="infoHora">Aquí deberia ir la informacion de la hora, por ejemplo indicaciones generales, nombre de la especialista, etc</div>
+          <h1>Mis Citas del Mes</h1>
+          <div class="infoHora">
+               <?php
 
-          <div class="divBotones">
-            <div class="" id="fechaReserva">
-              <input type="date" name="diaReserva" class="diaReserva" placeholder="Día">
-              <input type="time" name="horaReserva" class="horaReserva" placeholder="Hora">
-              <button class="btns" type="submit"><a style="text-decoration:none" href="../html/registrarSesion.php">Registrar sesion</a></button>
-              <button type="button" name="btnReservar" class="btns">Paciente no asiste</button>
-            </div>
-            <div class="" id="btnReservar">
-              <button type="button" name="btnReservar" class="btnAnular">Anular sesion</button>
-            </div>
+              $resultados = mysqli_query(conectar(),"SELECT * FROM agendaprofesional,paciente WHERE rutProfesionalAgenda = '$rutSesionPaciente' and rutPacienteCita = rutPaciente");
+              ?>
+              <table border=1>
+                  <tr>
+                      <th> Mes </th>
+                      <th> Dia </th>
+                      <th> Rut Paciente </th>
+                      <th> Bloque </th>
+                      <th> NombrePaciente </th>
+                      <th> Estado Cita <I/th>
+                      <th> Ir a Cita</th>
+                  </tr>
+                  <?php
+                  while ($consulta = mysqli_fetch_array($resultados)) {
+                      echo "<tr>";
+                  ?>
+                      <form action="../html/registrarSesion.php" method="post">
+                          <td><?php echo $consulta["mes"] ?>
+                              <input type="hidden" name="mesCitaElegida"  value=<?php echo $consulta["mes"] ?> >
+                          </td>
+                          <td><?php echo $consulta["dia"] ?>
+                              <input type="hidden" name="diaCitaElegida" value=<?php echo $consulta["dia"] ?> >
+                          </td>
+                          <td><?php echo $consulta["rutPacienteCita"] ?>
+                              <input type="hidden" name="rutCitaElegida" value=<?php echo $consulta["rutPacienteCita"] ?> >
+                          </td>
+                          <td><?php
+                              $bloqueCita =$consulta["idBloqueAgenda"];
+                              if($bloqueCita==1){
+                                  echo "08:00 - 08:45";
+                              }
+                              if($bloqueCita==2){
+                                  echo "09:00 - 09:45";
+                              }
+                              if($bloqueCita==3){
+                                  echo "10:00 - 10:45";
+                              }
+                              if($bloqueCita==4){
+                                  echo "11:00 - 11:45";
+                              }
+                              if($bloqueCita==5){
+                                  echo "12:00 - 12:45";
+                              }
+                              if($bloqueCita==6){
+                                  echo "13:00 - 13:45";
+                              }
+                              if($bloqueCita==7){
+                                  echo "14:00 - 14:45";
+                              }
+                              if($bloqueCita==8){
+                                  echo "15:00 - 15:45";
+                              }
+                              if($bloqueCita==9){
+                                  echo "16:00 - 16:45";
+                              }
+                              if($bloqueCita==10){
+                                  echo "17:00 - 17:45";
+                              }
+                              if($bloqueCita==11){
+                                  echo "18:00 - 18:45";
+                              }
+                              if($bloqueCita==12){
+                                  echo "19:00 - 19:45";
+                              }
+                              if($bloqueCita==13){
+                                  echo "20:00 - 20:45";
+                              }
+                              if($bloqueCita==14){
+                                  echo "21:00 - 21:45";
+                              }
+                              ?>
+                              <input type="hidden" name="bloqueCitaElegida" value=<?php echo $consulta["idBloqueAgenda"] ?> >
+                          </td>
+                          <td><?php echo $consulta["nombrePaciente"] ?>
+                              <input type="hidden" name="nombreCitaElegida" value=<?php echo $consulta["nombrePaciente"] ?> >
+                          </td>
+                          <td><?php echo $consulta["estadoCita"] ?>
+                              <input type="hidden" name="estadoCitaElegida" value=<?php echo $consulta["estadoCita"] ?> >
+                          </td>
+                          <td>
+                          <input type="submit" name="btn" value="CITA">
+                      </form>
+                          </td>
+                  <?php
+                      echo "</tr>";
+                  }
+                  ?>
+              </table>
           </div>
       </div>
     </div>

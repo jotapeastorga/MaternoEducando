@@ -11,11 +11,10 @@ $mesReserva = $_POST["mes"];
 $annoReserva = $_POST["anno"];
 $bloqueEli = $_POST["bloque"];
 $nombreActivo = $_SESSION['nombreActivo'];
+$rutPac = $_SESSION["usuarioActivo"];
 
 
 $bandera = 0;
-
-
 
 $resultados = mysqli_query(conectar(),"SELECT * FROM agendaprofesional WHERE rutProfesionalAgenda = '176557865' AND dia = '$diaReserva' AND mes = '$mesReserva' AND estadoProfesionalAgenda = 0 AND idBloqueAgenda  ='$bloqueEli'");
 while ($consulta = mysqli_fetch_array($resultados)) {
@@ -30,14 +29,16 @@ if  ($nombreActivo==null){
 }elseif  ($bandera == 0){
     echo json_encode ('sinHoras');
 }else{
-    if(mysqli_query(conectar(),"UPDATE agendaprofesional SET estadoProfesionalAgenda = 1 WHERE rutProfesionalAgenda = '184896559' AND dia = '$diaReserva' AND mes = '$mesReserva' AND estadoProfesionalAgenda = 0 AND idBloqueAgenda  ='$bloqueEli'")){
+
+
+    if(mysqli_query(conectar(),"UPDATE agendaprofesional SET estadoProfesionalAgenda = 1,rutPacienteCita = '$rutPac',estadoCita='RESERVADO' WHERE rutProfesionalAgenda = '176557865' AND dia = '$diaReserva' AND mes = '$mesReserva' AND estadoProfesionalAgenda = 0 AND idBloqueAgenda  ='$bloqueEli'")){
+
         echo json_encode ('reservaExitosa');
     }else{
         echo json_encode ('errorAlReservar');
     }
+
+
 }
-
-
-
 
 ?>

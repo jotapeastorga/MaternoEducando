@@ -21,6 +21,7 @@ ob_start();
     $_SESSION['reservar'] = "../html/reserva.php";
     $_SESSION['validarPaciente'] = "../Clases/crearPaciente.php";
     $_SESSION['nombreActivo'] = null;
+    $_SESSION['usuarioActivo'] = null;
 
 
     header("Location: ../html/home.php");
@@ -28,6 +29,3 @@ ob_start();
 
 
 ?>
-
-
-

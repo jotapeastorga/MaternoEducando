@@ -56,10 +56,9 @@ var buscarHoraEli = document.getElementById('reservarHoraEli')
                 }
 
                 if(data === 'errorAlReservar'){
-                    alert("Reserva Exitosa Para el " + dia +"-"+mes+"-"+anno);
+                    alert("ERROR al generar la reserva " + dia +"-"+mes+"-"+anno);
                     console.log(data)
                 }
 
             })
     })
-

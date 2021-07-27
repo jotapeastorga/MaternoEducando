@@ -27,11 +27,7 @@ formularioPaciente.addEventListener('submit', function(e){
             }
             if(data==='usuarioCreado'){
                 alert("Se ha creado correctamente el usuario para el rut "+ datos.get('rutPac'));
-                respuesta.innerHTML = `
-                <div class="alert alert-primary" role="alert">
-                    No Existe
-                </div>
-                `
+                window.location="../html/iniciarSesion.php";
             }
         } )
 })
