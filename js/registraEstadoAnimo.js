@@ -1,6 +1,6 @@
 
-var formIniciarSesion = document.getElementById('formRegistrarSesion')
-console.log('Datos de Registro')
+var formIniciarSesion = document.getElementById('formEstadoAnimo')
+console.log('Datos de Registro estado de Animo')
 
 formIniciarSesion.addEventListener('submit', function(e){
     e.preventDefault();
@@ -8,13 +8,16 @@ formIniciarSesion.addEventListener('submit', function(e){
     var datos = new FormData(formIniciarSesion);
 
     console.log('Datos de Registro')
-    console.log(datos.get('registroSesionTexto'))
-    console.log(datos.get('resumenSemana'))
-    console.log(datos.get('actividadesPsico'))
+    console.log(datos.get('resumenDia'))
+    console.log(datos.get('emocionDia'))
+    console.log(datos.get('comentariosEstadoAnimo'))
     console.log(datos.get('idConsulta'))
+    console.log(datos.get('idSesion'))
 
 
-    fetch('../Clases/registroSesion.php',{
+
+
+    fetch('../Clases/registraEstadoAnimo.php',{
         method: 'POST',
         body: datos
     })
@@ -23,7 +26,7 @@ formIniciarSesion.addEventListener('submit', function(e){
 
             if(data === 'exito'){
                 alert("Datos Registrados");
-                window.location="../html/listadoPacientes.php";
+                window.location="../html/sesionCli.php";
             }
 
             if(data==='error'){

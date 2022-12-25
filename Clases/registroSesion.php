@@ -9,21 +9,15 @@ ob_start();
 $rutPac = $_SESSION["usuarioActivo"];
 
 
-$mesCita =$_POST['mesCita'];
-$diaCita =$_POST['diaCita'];
-$rutCita =$_POST['rutCita'];
-$bloqueCita =$_POST['bloqueCita'];
-$nombreCita =$_POST['estadoCita'];
-$estadoCita =$_POST['nombreCita'];
 $registroSesionTexto =$_POST['registroSesionTexto'];
-$resumenSesionTexto =$_POST['resumenSesionTexto'];
+$resumenSemana =$_POST['resumenSemana'];
+$idConsulta =$_POST['idConsulta'];
+$actividadesPsico =$_POST['actividadesPsico'];
 
 
 
-
-if(mysqli_query(conectar(),"UPDATE agendaprofesional SET estadoCita ='ATENDIDO',registroSesion = '$registroSesionTexto',resumenSesion = '$resumenSesionTexto' WHERE rutProfesionalAgenda = '$rutPac' AND dia = '$diaCita' AND mes = '$mesCita' AND idBloqueAgenda  ='$bloqueCita'")){
-
-    echo json_encode ('exito');
+if(mysqli_query(conectar(),"INSERT INTO `sesionAtencion` ( `idPacienteConsulta`, `detalles`, `documentos`, `nivelMejora`, `TareaPsicoterapeuticas`, `fechaSesion`) VALUES ( '$idConsulta', '$registroSesionTexto', 0, '$resumenSemana', '$actividadesPsico', current_timestamp());")){
+        echo json_encode ('exito');
 }else{
     echo json_encode ('error');
 }

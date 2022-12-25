@@ -88,15 +88,33 @@ $nombreActivo = $_SESSION['nombreActivo'];
     <div id="contHorasCli">
       <div id="HorasCliente"><h1>Tus proximas citas</h1></div>
       <div class="hora"> <!--Hora-->
-          <div class="fotoPerfil" ></div>
+          <div class="s" ></div>
           <h1>Mis Citas del Mes</h1>
           <div class="infoHora">
                <?php
 
-              $resultados = mysqli_query(conectar(),"SELECT * FROM agendaprofesional,paciente WHERE rutProfesionalAgenda = '$rutSesionPaciente' and rutPacienteCita = rutPaciente");
+              $resultados = mysqli_query(conectar(),"SELECT * FROM agendaprofesional,paciente WHERE rutProfesionalAgenda = '$rutSesionPaciente' and rutPacienteCita = rutPaciente and estadoCita = 'RESERVADO'");
               ?>
+
+              <style>
+                  table {
+                      width: 100%;
+                      border-collapse: collapse;
+                  }
+
+                  td {
+                      padding: 5px 10px;
+                      text-align: center;
+                  }
+
+                  tr:nth-child(1) {
+                      background: #dedede;
+                  }
+              </style>
+
               <table border=1>
                   <tr>
+                      <th> Año </th>
                       <th> Mes </th>
                       <th> Dia </th>
                       <th> Rut Paciente </th>
@@ -109,15 +127,56 @@ $nombreActivo = $_SESSION['nombreActivo'];
                   while ($consulta = mysqli_fetch_array($resultados)) {
                       echo "<tr>";
                   ?>
-                      <form action="../html/registrarSesion.php" method="post">
-                          <td><?php echo $consulta["mes"] ?>
+                      <form action="../Clases/validarExisteConsulta.php" method="post">
+                          <td><?php echo $consulta["año"] ?>
+                              <input type="hidden" name="añoCitaElegida" value=<?php echo $consulta["año"] ?> >
+                          </td>
+                          <td><?php
+                              switch($consulta["mes"]){
+                                  case "12";
+                                      echo "Diciembre";
+                                      break;
+                                  case "11";
+                                      echo "Noviembre";
+                                      break;
+                                  case "10";
+                                      echo "Octubre";
+                                      break;
+                                  case "09";
+                                      echo "Septiembre";
+                                      break;
+                                  case "08";
+                                      echo "Agosto";
+                                      break;
+                                  case "07";
+                                      echo "Julio";
+                                      break;
+                                  case "06";
+                                      echo "Junio";
+                                      break;
+                                  case "05";
+                                      echo "mayo";
+                                      break;
+                                  case "04";
+                                      echo "Abril";
+                                      break;
+                                  case "03";
+                                      echo "Marzo";
+                                      break;
+                                  case "02";
+                                      echo "Febrero";
+                                      break;
+                                  case "01";
+                                      echo "Enero";
+                                      break;
+                              };?>
                               <input type="hidden" name="mesCitaElegida"  value=<?php echo $consulta["mes"] ?> >
                           </td>
                           <td><?php echo $consulta["dia"] ?>
                               <input type="hidden" name="diaCitaElegida" value=<?php echo $consulta["dia"] ?> >
                           </td>
                           <td><?php echo $consulta["rutPacienteCita"] ?>
-                              <input type="hidden" name="rutCitaElegida" value=<?php echo $consulta["rutPacienteCita"] ?> >
+                              <input type="hidden" name="rutPacienteCita" value=<?php echo $consulta["rutPacienteCita"] ?> >
                           </td>
                           <td><?php
                               $bloqueCita =$consulta["idBloqueAgenda"];

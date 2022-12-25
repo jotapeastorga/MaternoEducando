@@ -103,9 +103,7 @@
                 <button type="button" name="btnQs" class="btnMenu"
                 </button><a style="text-decoration:none" href=<?php echo $Qsomos ?>>Quienes somos</a></div>
             <div id="rO">
-                <button type="button" name="btnReservar" class="btnMenu"><a style="text-decoration:none"
-                                                                            href=<?php echo $reservar ?>>Reservar
-                        Hora</a></button>
+                <button type="button" name="btnReservar" class="btnMenu"><a style="text-decoration:none" href=<?php echo $reservar ?>>Reservar Hora</a></button>
             </div>
             <div id="blog">
                 <button type="button" name="btnBlog" class="btnMenu"><!--Aqui va el href-->Blog</button>

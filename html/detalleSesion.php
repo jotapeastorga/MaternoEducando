@@ -17,7 +17,8 @@ $rutCita =$_POST['rutCitaElegida'];
 $bloqueCita =$_POST['bloqueCitaElegida'];
 $nombreCita =$_POST['nombreCitaElegida'];
 $estadoCita =$_POST['estadoCitaElegida'];
-$idConsulta =$_POST['idConsulta'];
+$idPacienteConsulta =$_POST['idPacienteConsulta'];
+
 
 ?>
 
@@ -111,33 +112,26 @@ $idConsulta =$_POST['idConsulta'];
     <div id="cont_formulario" class="textCenter"> <!--Formulario de registro-->
               <div id="registroSesion">
                     <h3>Registro de sesion</h3>
-
                   <form id="formRegistrarSesion">
-
                       <div id="textarea">
-                          <p><textarea name="registroSesionTexto" class="textarea" placeholder="Escribe aqui el registro de la sesion ..."></textarea></p>
+                        <p><textarea name="registroSesionTexto" class="textarea" placeholder="Escribe aqui el registro de la sesion..."></textarea></p>
                       </div>
-
-                      <input type="hidden"  name="idConsulta" value=<?php echo  $idConsulta?>>
-
-                      <h3>Resumen Semana</h3>
-                      <select  name="resumenSemana" id="resumenSemana" class="horaReserva">
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                          <option value="5">5</option>
-                          <option value="6">6</option>
-                          <option value="7">7</option>
-                      </select>
-
-                      <h3>Actividades PsicoTerapeuticas</h3>
-                      <textarea name="actividadesPsico" class="textarea" placeholder="Escribe aqui el registro de la sesion ..."></textarea>
-
-                      <button type="submit" name="btnRegistrarSesion" class="btnResSesion" >Registrar</button>
+                      <h2>Resumen Paciente</h2>
+                      <div id="textarea">
+                          <p><textarea name="resumenSesionTexto" class="textarea" placeholder="Resúmen o indicaciones para el paciente"></textarea></p>
+                      </div>
+                      <input type="hidden"  name="mesCita" value=<?php echo $mesCita ?>>
+                      <input type="hidden"  name="diaCita" value=<?php echo $diaCita ?>>
+                      <input type="hidden"  name="rutCita" value=<?php echo $rutCita ?>>
+                      <input type="hidden"  name="bloqueCita" value=<?php echo  $bloqueCita?>>
+                      <input type="hidden"  name="estadoCita" value=<?php echo  $estadoCita?>>
+                      <input type="hidden"  name="nombreCita" value=<?php echo  $nombreCita?>>
+                      <!--div id="archivo">
+                        <input type="file" name="Documento" value=""class="archivo">
+                      </div-->
+                        <button class="btnResSesion" type="submit">Registrar</button>
                   </form>
-
-                  <form id="formAnularSesions">
+                  <form id="formAnularSesion">
                       <input type="hidden"  name="mesCita" value=<?php echo $mesCita ?>>
                       <input type="hidden"  name="diaCita" value=<?php echo $diaCita ?>>
                       <input type="hidden"  name="rutCita" value=<?php echo $rutCita ?>>
@@ -154,7 +148,7 @@ $idConsulta =$_POST['idConsulta'];
             <button type="button" name="btnMenuCli" class="btnMenuCli" ><a style="text-decoration:none" href="../html/sesionPro.php">Ir a mi menu</a></button>
         </div>
       </div>
-      <!--script src="../js/anulaSesion.js"></script-->
+      <script src="../js/anulaSesion.js"></script>
       <script src="../js/registraSesion.js"></script>
     </body>
   </html>

@@ -10,6 +10,7 @@ $recuperarClave = $_SESSION['recuperarClave'];
 $registrar= $_SESSION['registrar'];
 $reservar = $_SESSION['reservar'];
 $validarPaciente = $_SESSION['validarPaciente'];
+$idConsulta =$_POST['idConsulta'];
 
 
 ?>

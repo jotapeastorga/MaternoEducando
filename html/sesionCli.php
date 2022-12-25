@@ -9,6 +9,7 @@ $Qsomos = $_SESSION['Qsomos'];
 $recuperarClave = $_SESSION['recuperarClave'];
 $registrar= $_SESSION['registrar'];
 $reservar = $_SESSION['reservar'];
+$estadoAnimo = $_SESSION['estadoAnimo'];
 $rutSesionPaciente = $_SESSION['usuarioActivo'];
 $nombreActivo = $_SESSION['nombreActivo'];
 
@@ -74,8 +75,8 @@ $nombreActivo = $_SESSION['nombreActivo'];
               <!--<div class="btnSesion">Iniciar sesion</div>-->
               <div id="inicio"><button type="button" name="btnInicio"   class="btnMenu"</button><a style="text-decoration:none" href=<?php echo  $home?>>Inicio       </a></div>
               <div id="qS">    <button type="button" name="btnQs"       class="btnMenu"</button><a style="text-decoration:none" href=<?php echo $Qsomos ?>>Quienes somos</a></div>
-              <div id="rO"><button type="button" name="btnReservar" class="btnMenu"><a style="text-decoration:none" href=<?php echo  $reservar?>>Reservar Hora</a></button></div>
-              <div id="blog"><button type="button" name="btnBlog" class="btnMenu"><!--Aqui va el href-->Blog</button></div>
+              <div id="rO">    <button type="button" name="btnReservar" class="btnMenu"><a style="text-decoration:none" href=<?php echo  $reservar?>>Reservar Hora</a></button></div>
+              <div id="rO">    <button type="button" name="btnEstadoAnimo" class="btnMenu"><a style="text-decoration:none" href=<?php echo  $estadoAnimo?>>Estado de Animo</a></button></div>
           </div>
       </div>
     </div>
